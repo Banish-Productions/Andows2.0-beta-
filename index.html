@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="start.png" type="image/x-icon" />
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  box-shadow: 2px 2px 20px royalblue;
+  height: 70%;
+  width: 0%;
+  position: fixed;
+  z-index: 100000;
+  bottom: 0;
+  left: 0;
+  background-color: #bdffff99;
+  background-blend-mode: staturation;
+  background-image: url('/bg.jpg');
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: royalblue;
+  text-shadow: 1px 1px 1px black,
+  -1px -1px 1px grey;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover {
+  color: #d5d5d7;
+  text-shadow: 1px 1px 1px black;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  bottom: 7px;
+  left: -41px;
+  box-shadow: 2px 2px 20px skyblue;
+  padding: 0px;
+  z-index: 1;
+  margin-left: 50px;
+}
+
+.sidenav p {
+    position: absolute;
+    padding: 0px;
+    right: 0;
+    font-weight: bold;
+    top: 0px;
+    color: white;
+    font-size: 10px;
+    bottom: 25px;
+    height: 100%;
+    background: #63fff592;
+    border: outset 10px #63fff572;
+    box-shadow: -1px -1px 1px #000000,
+    1px 1px 1px #000000;
+}
+
+body{
+    background-image: url('./bg.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.app{
+    width: 50px;
+    padding-top: 10px;
+}
+
+.app img{
+    background: linear-gradient(to bottom left, #bdfffb 0%, #63fff5 100%);
+    margin: 20px;
+    border: 2px ;
+    border: outset 5px #63fff5;
+    padding:  2px;
+    margin-left: 5px;
+}
+.taskbarapp{
+    background: linear-gradient(to bottom left,rgba(189,255,251,0.373) 0%, rgba(99,255,245,0.36) 100%);
+    border: outset 5px #63fff5;
+    padding: 2px;
+    width: 100%;
+    margin-left: 10px;
+    box-shadow: 2px 2px 5px royalblue;
+}
+.sidenav{
+    background-image: url('/rgb.webp');
+}
+.sidenav span {
+    animation: popup;
+    background-repeat: no-repeat;
+    position: absolute;
+    box-shadow: 4px 5px 2px skyblue;
+    padding: 20px 20px;
+    width: 50%;
+    height: 100px;
+    top: 70px;
+    z-index: 1000;
+    border: outset 5px #63fff5;
+    background-image: url('./Andows.jpg');
+    background-size: contain;
+    text-align: center;
+    color: skyblue;
+    text-shadow: 1px 1px 1px royalblue;
+    justify-content: center;
+    margin: 10px;
+}
+@keyframes popup{
+    0%{
+        width: 20px;
+        height: 20px;
+    }
+    100%{
+        width: 50%;
+        height: 100px;
+    }
+}
+.link{
+    border-radius: 5%;
+    background: #bdffff55;
+    position: absolute;
+    left: 0;
+    width: 80%;
+    padding-top: 10px;
+}
+.link a{
+    border-radius: 5%;
+    color: black;
+    border: outset 2px skyblue;
+    box-shadow: 4px 4px 1px skyblue;
+    margin: 10px;
+    background: linear-gradient(to bottom left, #bdfffb55 0%, #63fff55 100%);
+}
+#apppopup{
+    width: 50%;
+    border-top: outset 10px rgb(0,190,238);
+    margin: 2% 2%;
+    border: outset 4px #00beee99;
+    height: 500px;
+    position: absolute;
+    top: 100000px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.taskbar{
+  position: fixed;
+  left: -1px;
+  bottom: -1px;
+  width: 100%;
+  padding: 10px;
+  z-index: 99;
+ background: rgb(51,237,255);
+}
+#clock{
+    position: absolute;
+    right: 10px;
+    padding: 10px;
+    bottom: 10px;
+}
+.option{
+    background: linear-gradient(to bottom left,rgba(189,255,251,0.373) 0%, rgba(99,255,245,0.36) 100%);
+    border: outset 5px #63fff5;
+    padding: 2px;
+    float: right;
+    margin-left: 10px;
+    box-shadow: 4px 4px 2px rgba(99,255,245,0.775);
+}
+#cover small{
+    font-size: 10px;
+}
+</style>
+</head>
+<body>
+    <div>
+       <div id="apppopup">
+            <div>
+                
+            </div>
+       </div>
+<a style="border:inset 2px; border-radius:50%;border:none;box-shadow:2px 4px 2px black;" href="https://www.bing.com/" class="app"><img width="50px" src="bing.png" alt="" /></a>
+<br />
+<a style="border-radius:50%;border:none;box-shadow:2px 4px 2px black;" class="app" href="https://sites.google.com/view/bp-co/home?authuser=0"><img src="bp.png" width="50px" alt="" /></a>
+</div>
+<div id="mySidenav" class="sidenav">
+   
+    <p style="color:white;position:absolute;top:0px;" id="goto">
+        <a href="#A">A</a>
+   
+        <a href="#B">B</a>
+     
+        <a href="#C">C</a>
+     
+        <a href="#E">E</a>
+     
+        <a href="#F">F</a>
+      
+        <a href="#G">G</a>
+     
+        <a href="#I">I</a>
+        
+        <a href="#L">L</a>
+        
+        <a href="#N">N</a>
+        
+        <a href="#O">O</a>
+       
+        <a href="#R">R</a>
+        
+        <a href="#S">S</a>
+      
+        <a href="#T">T</a>
+       
+        <a href="#W">W</a>
+       
+        <a href="#Y">Y</a>
+    </p>
+  <a href="javascript:void(0)" class="closebtn" id="close" onclick="closeNav()"><img src="startmenu.png" width="50px" alt="" /></a>
+       <span id="cover" class="andows"> </span>
+   <div class="link">
+       <br />
+       <a id="A" href="#">A</a>
+       <a onclick="closeNav()" href="https://www.amazon.in/"><img src="amazon.png" style="color:black;" width="40px" alt="" />amazon</a>
+       <a id="B" href="#">B</a>
+  <a onclick="closeNav()" class="shortcut" href="https://sites.google.com/view/bp-co/home?authuser=0"><img style="border-radius:50%;border:none;box-shadow:2px 2px 2px grey;" src="bp.png" width="50px" height="50px" alt="" />&ensp;Banish Productions&ensp;</a>
+  <a onclick="closeNav()" class="shortcut" href="https://www.bing.com/"><img src="bing.png" width="50px" alt="" />Bing</a>
+  <a id="C" href="#">C</a>
+  <a onclick="closeNav()" href="https://edition.cnn.com/"><img src="cnn.png" width="40px" /> CNN</a>
+  <a onclick="closeNav()" href="https://www.chase.com/"><img src="chase.png" width="40px" alt="" />Chase</a>
+  <a id="E" href="#">E</a>
+         <a onclick="closeNav()" href="https://www.ebay.com/"><img src="ebay.png" width="40px" />Ebay</a>
+        <a onclick="closeNav" href="https://banish-productions.github.io/EDU-Eating-MOBILE/"><img src="EE.png" style="border-radius:50%;border:none;box-shadow:2px 2px 2px grey;" width="40px" />Education Eating</a>
+         <a id="F" href="#">F</a>
+         <a onclick="closeNav()" href="https://www.facebook.com/"><img src="FB.png" width="40px" />Facebook</a>
+         <a id="G" href="#">G</a>
+         <a onclick="closeNav" href="https://www.google.com/"><img src="google.png" width="40px" />Google</a>
+         <a id="I" href="#">I</a>
+         <a onclick="closeNav" href="https://www.instagram.com/"><img src="insta.png" width="40px" />Instagram</a>
+         <a onclick="closeNav" href="https://www.instructure.com/"><img src="Instructure.png" width="40px" />Instructure</a>
+         <a onclick="closeNav" href="https://www.intuit.com/"><img src="intuit.png" width="40px" />&ensp;intuit</a>
+         <a id="L" href="#">L</a>
+         <a onclick="closeNav" href="https://in.linkedin.com/"><img src="linkedin.jpeg" width="40px" />&ensp;linkedin</a>
+         <a id="N" href="#">N</a>
+         <a onclick="closeNav" href="https://www.netflix.com/in/"><img  src="netflix.png" width="40px" /> netflix</a>
+         <a onclick="closeNav" href="https://www.nytimes.com/"><img src="nytimes.png" width="40px" /> nytimes</a>
+         <a id="O" href="#">O</a>
+         <a onclick="closeNav" href="https://www.office.com/"><img src="office.png" width="40px" /> Office</a>
+         <a id="R" href="#">R</a>
+         <a onclick="closeNav" href="https://www.reddit.com/"><img src="reddit.png" width="40px" />Reddit</a>
+         <a id="S" href="#">S</a>
+         <a onclick="closeNav" href="https://www.shopify.in/"><img src="shopify.png" width="40px" />Shopify</a>
+         <a id="T" href="#">T</a>
+         <a onclick="closeNav" href="https://web.telegram.org/#/loginhttps://www.shopify.in/"><img src="telegram.png" width="40px" /> Telegram</a>
+         <a onclick="closeNav" href="https://m.twitch.tv/"><img src="twitch.png" width="40x" />twitch</a>
+         <a id="W" href="#">W</a>
+         <a onclick="closeNav" href="https://en.m.wikipedia.org/wiki/Main_Page"><img src="wikipedia.png" width="40px" />wikipedia</a>
+         <a id="Y" href="#">Y</a>
+         <a onclick="closeNav" href="https://in.yahoo.com/"><img src="yahoo.png" width="40px" /> Yahoo</a>
+         <div>
+             <br />
+             <br />
+         </div>
+         <br />
+         <br />
+    </div>
+</div>
+<div id="myDIV">
+<embed style="width:100%;height:50%;right:0px;bottom:60px;position:absolute;" src="indexi.html" type="text/html" />
+</div>
+<div class="taskbar">
+    <span style="
+  border: none;
+  outline: none;
+  box-shadow:2px 2px 2px royalblue;
+  color: white;
+  cursor: pointer;
+  padding-right:2px;
+  border-radius: 4px;
+  cursor:pointer;" onclick="openNav()"><img src="startmenu.png" width="50px" height="50px" alt="" /></span>
+  
+  <a href="https://www.bing.com/" class="taskbarapp"><img width="50px" src="bing.png" alt="" /></a>
+<a class="taskbarapp" href="https://sites.google.com/view/bp-co/home?authuser=0"><img src="bp.png" width="50px" alt="" /></a>
+<button class="option" id="clock" onclick="myFunction()">11:41:15</button>
+</div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById("close").style.position = "fixed";
+   document.getElementById("goto").style.position = "fixed";
+   document.getElementById("goto").style.right = "0%"
+   document.getElementById("goto").style.top = "-10px"
+   document.getElementById("goto").style.height = "100%"
+   document.getElementById("goto").style.width = "20%"
+   document.getElementById("cover").style.position = "fixed" ;
+   document.getElementById("myDIV").style.display = "none" ;
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("close").style.position = "absolute";
+   document.getElementById("goto").style.position = "absolute";
+   document.getElementById("cover").style.position = "absolute";
+}
+
+setInterval(showTime, 1000); 
+
+        function showTime() { 
+
+            let time = new Date(); 
+
+            let hour = time.getHours(); 
+
+            let min = time.getMinutes(); 
+
+            let sec = time.getSeconds(); 
+
+            am_pm = "AM"; 
+
+  
+
+            if (hour > 12) { 
+
+                hour -= 12; 
+
+                am_pm = "PM"; 
+
+            } 
+
+            if (hour == 0) { 
+
+                hr = 12; 
+
+                am_pm = "AM"; 
+
+            } 
+
+  
+
+            hour = hour < 10 ? "0" + hour : hour; 
+
+            min = min < 10 ? "0" + min : min; 
+
+            sec = sec < 10 ? "0" + sec : sec; 
+
+  
+
+            let currentTime = hour + ":"  
+
+                + min + ":" + sec + am_pm; 
+
+  
+
+            document.getElementById("clock") 
+
+                .innerHTML = currentTime; 
+
+        } 
+
+  
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } 
+  else if (x.style.width === "0px"){
+    x.style.width = "50%";
+  }
+  else {
+    x.style.display = "none";
+  }
+}
+        showTime(); 
+        const d = new Date();
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+document.getElementById("demo").innerHTML = days[d.getDay()];
+
+</script>
+</body>
+</html>
